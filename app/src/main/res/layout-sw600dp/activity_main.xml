@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D47A1"
+    tools:context=".activity.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/globalshape"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/llvComandos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llvCartao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#AA0D47A1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llhCartaoLabels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#AA0D47A1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/llvLblCartaoECliente"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:background="#FFE4DBC2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblCartao"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:background="#9DC1FD"
+                        android:gravity="center_vertical"
+                        android:text="CARTÃO:"
+                        android:textAlignment="center"
+                        android:textColor="#FC0A0A0A"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/lblNomeCliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:background="#9DC1FD"
+                        android:gravity="center_vertical"
+                        android:text="CLIENTE:"
+                        android:textAlignment="center"
+                        android:textColor="#FC0A0A0A"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llvTxtCartaoECliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/txtNumComandaMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="#F8F8F7"
+                        android:ems="7"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textIsSelectable="false"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/txtClienteNomeMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="#F8F8F7"
+                        android:ems="10"
+                        android:inputType="textCapCharacters"
+                        android:singleLine="true"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/edtWarnings"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:background="#9DC1FD" />
+
+            <TextView
+                android:id="@+id/lblContador"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/textboxshape"
+                android:gravity="center"
+                android:text="ITENS NA LISTA = 0"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llvBtnMenuSucos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listViewMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#9DC1FD"
+
+                android:textFilterEnabled="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llvComandos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <Button
+            android:id="@+id/btnListItem"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:layout_width="140dp"
+            android:layout_height="95dp"
+            android:background="@drawable/button_yellow_theme"
+            android:onClick="listarPedidosDialog"
+            android:shadowColor="#B0B0B0"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:text="EXCLUIR "
+            android:textColor="#000000"
+            android:textSize="14sp"
+
+
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btnImprimir"
+            android:layout_width="140dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/button_green_theme"
+            android:onClick="ImprimirPedido"
+            android:shadowColor="#B0B0B0"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:text="IMPRIMIR"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btnSair"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="140dp"
+            android:layout_height="95dp"
+            android:background="@drawable/button_red_theme"
+            android:onClick="sair"
+            android:shadowColor="#B0B0B0"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:text="SAIR"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
